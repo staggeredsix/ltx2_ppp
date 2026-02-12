@@ -1,0 +1,110 @@
+{
+  "1": {
+    "inputs": {
+      "image": "input.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Input Frame"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": "cinematic b-roll"
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "3": {
+    "inputs": {
+      "seed": 1,
+      "steps": 20,
+      "cfg": 2.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.75,
+      "model": [
+        "7",
+        0
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Seeded Sampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "bad quality"
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "5": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "7",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode"
+    }
+  },
+  "6": {
+    "inputs": {
+      "width": 768,
+      "height": 432,
+      "batch_size": 16
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Video Latent"
+    }
+  },
+  "7": {
+    "inputs": {
+      "ckpt_name": "ltxv.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Model Loader (replace with LTX-2 node graph)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "images": [
+        "5",
+        0
+      ],
+      "filename_prefix": "genbroll",
+      "fps": 24
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Output Video"
+    }
+  }
+}

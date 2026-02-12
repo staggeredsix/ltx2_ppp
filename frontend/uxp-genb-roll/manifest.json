@@ -1,0 +1,31 @@
+{
+  "id": "com.genbroll.panel",
+  "name": "GenB-Roll",
+  "version": "0.1.0",
+  "main": "index.html",
+  "host": {
+    "app": "premierepro",
+    "minVersion": "25.0.0"
+  },
+  "entrypoints": [
+    {
+      "id": "genbrollPanel",
+      "type": "panel",
+      "label": "GenB-Roll",
+      "minimumSize": {
+        "width": 360,
+        "height": 520
+      },
+      "maximumSize": {
+        "width": 1200,
+        "height": 2400
+      }
+    }
+  ],
+  "requiredPermissions": {
+    "network": {
+      "domains": "all"
+    },
+    "localFileSystem": "fullAccess"
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>GenB-Roll</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>GenB-Roll</h1>
+    <label>Backend <span id="backendStatus">discovering...</span></label>
+    <label>Input Mode
+      <select id="inputMode">
+        <option value="auto">Auto (selection or playhead frame)</option>
+        <option value="frame">Frame at Playhead</option>
+        <option value="clip">Clip Segment (2-5s)</option>
+      </select>
+    </label>
+
+    <label>Prompt</label>
+    <textarea id="prompt" rows="5"></textarea>
+
+    <div id="presetButtons"></div>
+
+    <div class="actions">
+      <button id="generate">Generate</button>
+      <button id="generateAnother">Generate Another Version</button>
+    </div>
+
+    <p id="queueLabel">Processes in Queue: 0</p>
+    <ul id="jobs"></ul>
+
+    <video id="preview" controls></video>
+    <div class="actions">
+      <button id="openOutput">Open Output</button>
+      <button id="saveOutput">Save Output</button>
+    </div>
+
+    <p id="error" class="error"></p>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
